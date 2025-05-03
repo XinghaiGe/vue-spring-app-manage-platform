@@ -1,0 +1,36 @@
+server:
+  port: 8888
+upload:
+  path: D:/Desktop/app_back/
+spring:
+  #  自定义静态资源
+  resources:
+    static-locations:
+      file:${upload.path},
+      classpath:/META-INF/resources/, 
+      classpath:/resources/, 
+      classpath:/static/, 
+      classpath:/public/
+  datasource:
+    url: jdbc:mysql:///appstudy?serverTimezone=Asia/Shanghai&characterEncoding=utf8
+    username: root
+    password: 123.com
+    type: com.alibaba.druid.pool.DruidDataSource # 连接池
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1 # 不作限制
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+mybatis:
+  mapper-locations: classpath:mapper/*.xml # mapper 位置
+  type-aliases-package: com.gxh.app_back.domain # 实体层位置别名
+# 打印 sql 语句
+logging:
+  level:
+    com:
+      gxh:
+        app_back:
+          mapper: debug
