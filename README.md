@@ -1,3 +1,11 @@
+# SpringBoot+Vue2应用后台管理系统
+
+## 技术选型
+
+后端：springboot2+mybatis+druid+mysql+maven
+
+前端：vue2+router+element
+
 > jf3q.com
 >
 > 若依
@@ -1435,7 +1443,7 @@ nginx反向代理
   }
 ```
 
-     
+​     
 
 重启
 
